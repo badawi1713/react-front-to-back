@@ -1,6 +1,6 @@
 import { ListingItem, Spinner } from "components"
 import { db } from "configs/firebase.config"
-import { collection, getDocs, query, where, orderBy, limit, startAfter, QuerySnapshot } from "firebase/firestore"
+import { collection, getDocs, limit, orderBy, query, where } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
@@ -46,7 +46,7 @@ const Category = () => {
 
         fetchListings()
 
-    }, [])
+    }, [params.categoryName])
 
     return (
         <div className="category">
